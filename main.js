@@ -1,3 +1,6 @@
+let playerScore = 0
+let compScore = 0
+
 const computerPlay = () => {
     const arrOfChoice = ['rock', 'paper', 'scissors']
     const randomNum = Math.floor(Math.random() *3)
@@ -30,4 +33,21 @@ const playRound = (playerSelection, computerSelection) => {
 
 }
 
-const playerSelection = 'rock'
+const game = () => {
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt('One, Two...', 'Rock, Paper, Scissors').toLowerCase()
+        const computerSelection = computerPlay()
+        console.log('1', playRound(playerSelection, computerSelection))
+    }
+
+    if (playerScore > compScore) {
+        return 'You beat the computer! Congrats!'
+    } else if (playerScore < compScore) {
+        return 'You lose! Nice try!'
+    } else {
+        return 'You tied with the machine! Not so cool!'    
+    }
+    
+}    
+
+    console.log(game())
